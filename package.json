@@ -1,0 +1,28 @@
+{
+  "name": "project-2018",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "styl": "stylus -w src/styles/app.styl -o src/app.css"
+  },
+  "dependencies": {
+    "hyperapp": "^1.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-hyperapp": "^2.3.0",
+    "stylus": "^0.54.5"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

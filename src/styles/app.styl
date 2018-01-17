@@ -1,0 +1,179 @@
+@import 'Variable';
+@import 'Display';
+@import 'Component';
+@import 'Space';
+@import 'Color';
+
+/* roboto-300 - latin */
+@font-face 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('../static/fonts/roboto-v16-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../static/fonts/roboto-v16-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+
+/* roboto-300italic - latin */
+@font-face 
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
+       url('../static/fonts/roboto-v16-latin-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../static/fonts/roboto-v16-latin-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+
+/**  样式命名风格
+  *  .block{}           组件样式
+  *  .block__element{}  组件节点样式
+  *  .block--modifier{} 组件节点状态
+  */
+/* --- normalize --- */ 
+body
+  font-family 'Roboto'
+  margin 0
+  display flex
+  background-color abc-primary
+  color theme-color
+  // section
+  //   border-bottom: 1px solid theme-color
+  #app
+    height: 700vh
+  .page
+    max-height: 100vh
+    width: 100vw
+    box-sizing: border-box
+    @extend .flex-fill
+    &#page-one
+      .material-icons
+        font-size: 48px
+    &#page-two,
+    &#page-three,
+    &#page-four,
+    &#page-five,
+    &#page-six,
+    &#page-seven
+      .flex-left-center,
+      .flex-right-center,
+      .flex-center,
+      .flex-fill
+        padding: 1.25em
+        div
+          line-height: 20pt
+          font-size: 14pt
+      .letter
+        width: 68%
+    .share
+      width: 100%
+      @extend .flex-center
+      .btn-share
+        width: 47vw
+
+/* --- animate --- */
+[class*=elevation-]
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+@keyframes placeHolderShimmer{
+    0%{
+      background-position: -468px 0
+    }
+    100%{
+      background-position: 468px 0
+    }
+  }
+
+.animated-background
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  position: relative;
+
+.underdash
+  background-image: linear-gradient(90deg,rgba(0,0,0,0.38) 0,rgba(0,0,0,0.38) 33%,transparent 0);
+  background-position: bottom calc(50% - 24px) left 0;
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+
+/* --------------- style components --------------- */
+
+/* --- list > item (简版) --- */
+ul.list
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: column
+  &.dense
+    li.item
+      padding: 0 space-util(0)
+  li.item
+    flex: 1
+    padding: space-util(0) space-util(1)
+    min-height: 40px
+    display: flex
+    flex-direction: row
+    align-items: center;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    white-space: nowrap;
+    cursor pointer
+
+    i.item-icon,
+    button.material-icons
+      // &:first-of-type
+      width: 45px
+    .item-content
+      &~i.item-icon
+        text-align: end
+
+    .item-content
+      flex 1
+      padding-left: 8px
+
+/* --- 引用块 --- */
+.blockquote
+  display: block
+  border-left 3px solid abc-blue
+  border-radius: 3px;
+  background: linear-gradient(to right, abc-blue ,rgba(abc-blue,0.6))
+  padding: space-util(0) space-util(1)
+  box-sizing: border-box
+  .header
+    color grey-lighten-4
+    font-size: 14pt
+    font-weight: bold
+  .describe
+    font-size 12pt
+    color grey-lighten-4
+
+/* --- 小标题 --- */
+.title
+  @extend .pa-0
+  font-size 14pt
+  font-weight: bold
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 40px;
+  padding-left: space-util(1)
+  height: 60px;
+  box-sizing: border-box;
+  &::after
+    user-select none
+    margin-left: space-util(2);
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 25px);
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(to right, abc-blue, transparent 80%);
+  .tools
+    @extend .d-inline-block
+    float: right
