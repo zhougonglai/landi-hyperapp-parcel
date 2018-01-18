@@ -14,6 +14,7 @@
     "autoprefixer": "^7.2.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-hyperapp": "^2.3.0",
+    "fundebug-javascript": "^0.3.4",
     "stylus": "^0.54.5"
   },
   "engines": {

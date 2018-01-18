@@ -1,9 +1,13 @@
-
+import {debuger} from '../';
 
 export const actions = {
   onTap: () => (state, actions) => {
     actions.clicked()
-    setTimeout(actions.btnreset, 600);
+    clearTimeout(timer);
+    const timer = setTimeout(() => {
+      // debuger.notify('share notify', '分享按钮被点击');
+      actions.btnreset();
+    }, 600);
   },
   clicked: () => state => ({
     btnClick: true

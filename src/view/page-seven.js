@@ -18,7 +18,8 @@ export const PageSeven = ({state, actions}) =>
     </div>
     <div class="span-1 d-flex flex-center">
       <div class="share">
-        <button type="button" class={state.btnClick? 'btn blue round btn-share btn-click': 'btn blue round btn-share'} onclick={actions.onTap}>那必须的</button>
+        <button type="button" class={state.btnClick? 'btn blue round btn-share btn-click': 'btn blue round btn-share'} 
+        onclick={actions.onTap}>那必须的</button>
       </div>
     </div>
   </section>
