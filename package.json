@@ -9,8 +9,6 @@
     "build": "parcel index.html NODE_ENV=production "
   },
   "dependencies": {
-    "@hyperapp/logger": "^0.4.1",
-    "@hyperapp/router": "^0.4.1",
     "hyperapp": "^1.0.2"
   },
   "devDependencies": {
