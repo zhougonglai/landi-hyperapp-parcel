@@ -5,9 +5,12 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "styl": "stylus -w src/styles/app.styl -o src/app.css"
+    "styl": "stylus -w src/styles/app.styl -o src/app.css",
+    "build": "parcel index.html NODE_ENV=production "
   },
   "dependencies": {
+    "@hyperapp/logger": "^0.4.1",
+    "@hyperapp/router": "^0.4.1",
     "hyperapp": "^1.0.2"
   },
   "devDependencies": {

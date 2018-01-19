@@ -1,6 +1,8 @@
-import {debuger} from '../';
+// import {debuger} from '../';
+import {location} from '@hyperapp/router';
 
 export const actions = {
+  location: location.actions,
   onTap: () => (state, actions) => {
     actions.clicked()
     clearTimeout(timer);

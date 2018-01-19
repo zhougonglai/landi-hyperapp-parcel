@@ -1,4 +1,5 @@
 import {h} from 'hyperapp';
+import {Link} from '@hyperapp/router';
 
 export const PageSeven = ({state, actions}) => 
   <section class="span-1 d-flex page" id="page-seven">
@@ -20,6 +21,7 @@ export const PageSeven = ({state, actions}) =>
       <div class="share">
         <button type="button" class={state.btnClick? 'btn blue round btn-share btn-click': 'btn blue round btn-share'} 
         onclick={actions.onTap}>那必须的</button>
+        <Link to='/result'>result page</Link>
       </div>
     </div>
   </section>
