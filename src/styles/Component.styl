@@ -1,5 +1,10 @@
 
 /* --- elevation --- */
+elevation-flat(color)
+  box-shadow: 
+    0 0 3px -2px lightness(color, 70%),
+    0 0 4px 0 lightness(color, 64%),
+    0 0 8px 0 lightness(color, 62%)
 
 .elevation-1
   box-shadow: 
@@ -67,7 +72,7 @@ button
     border-radius: 50%
     padding: 0
   &.btn
-    @extend .elevation-3
+    elevation-standard(abc-gold)
     cursor pointer
     align-items: center
     border-radius: 2pt
@@ -94,6 +99,9 @@ button
     &.blue
       background-color: abc-blue
       border-color: abc-blue
+    &.gold
+      background-color: abc-gold
+      border-color: abc-gold
     &.round
       border-radius: 28pt
 
@@ -119,6 +127,9 @@ button
   &.blue
     &::before
       border-color: lightness(abc-blue, 80%)
+  &.gold
+    &::before
+      border-color: lightness(abc-gold, 80%)
   &::before
     content: ''
     position: absolute

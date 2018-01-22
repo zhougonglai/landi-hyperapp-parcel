@@ -1,0 +1,73 @@
+/**
+ * ----------------------------------------
+ * animation focus-in-contract-bck
+ * ----------------------------------------
+ */
+@keyframes focus-in-contract-bck
+  0%
+    letter-spacing: 1em
+    transform: translateZ(300px)
+    filter: blur(12px)
+    opacity: 0
+  100%
+    transform: translateZ(12px)
+    filter: blur(0)
+    opacity: 1
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@keyframes text-focus-in
+  0%
+    filter: blur(12px)
+    opacity: 0
+  100%
+    filter: blur(0px)
+    opacity: 1
+
+/**
+ * ----------------------------------------
+ * animation tracking-out-contract-bck-bottom
+ * ----------------------------------------
+ */
+@keyframes tracking-out-contract-bck-bottom
+  0%
+    transform: translateZ(0) translateY(0)
+    opacity: 1
+  60%
+    opacity: 1
+  100% 
+    letter-spacing: -0.5em
+    transform: translateZ(-500px) translateY(300px)
+    opacity: 0
+/**
+ * ----------------------------------------
+ * animation blur-out-contract-bck
+ * ----------------------------------------
+ */
+@keyframes blur-out-contract-bck
+  0%
+    transform: translateZ(0)
+    filter: blur(0.01)
+  100%
+    letter-spacing: -0.5em
+    transform: translateZ(-500px)
+    filter: blur(12px) opacity(0%)
+
+.focus-in-contract-bck
+	animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+.text-focus-in{
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+  padding: 8px;
+}
+.blur-out-contract-bck {
+  animation: blur-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  padding: 8px;
+}
+
+.tracking-out-contract-bck-bottom{
+	animation: tracking-out-contract-bck-bottom 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+  padding: 8px
+}

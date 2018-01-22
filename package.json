@@ -9,7 +9,9 @@
     "build": "parcel index.html NODE_ENV=production "
   },
   "dependencies": {
-    "hyperapp": "^1.0.2"
+    "animejs": "^2.2.0",
+    "hyperapp": "^1.0.2",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",

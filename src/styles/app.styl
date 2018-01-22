@@ -3,12 +3,13 @@
 @import 'Component';
 @import 'Space';
 @import 'Color';
+@import 'Animation';
 
 /* roboto-300 - latin */
 @font-face 
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   src: local('Roboto Light'), local('Roboto-Light'),
        url('../static/fonts/roboto-v16-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../static/fonts/roboto-v16-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -17,7 +18,7 @@
 @font-face 
   font-family: 'Roboto';
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
        url('../static/fonts/roboto-v16-latin-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../static/fonts/roboto-v16-latin-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -39,6 +40,26 @@ body
   #app
     height: 700vh
     position: relative
+  .d-inline-block.text-center.text-gold
+    min-width: 3.5rem
+  .music-box
+    position: fixed
+    right: 1.25rem
+    top: 1.25rem
+    z-index: 200
+    width: 2.8125rem
+    height: 2.8125rem
+    background-image: url('../static/images/bgmBtn.svg')
+    background-size: contain
+    background-repeat: no-repeat
+  .fireworks
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    widows: 100%
+    height: 100%
   .page
     max-height: 100vh
     width: 100vw
@@ -57,9 +78,9 @@ body
       .flex-right-center,
       .flex-center,
       .flex-fill
-        padding: 1.25em
+        padding: .5rem
         div
-          line-height: 20pt
+          line-height: 16pt
           font-size: 14pt
       .letter
         width: 68%
@@ -68,6 +89,8 @@ body
       @extend .flex-center
       .btn-share
         width: 47vw
+        elevation-flat(abc-gold)
+
 
 /* --- animate --- */
 [class*=elevation-]
@@ -80,7 +103,20 @@ body
     100%{
       background-position: 468px 0
     }
+}
+
+@keyframes playing{
+  from {
+    transform: rotate(0deg);
   }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.playing
+  animation: playing 1.2s linear infinite;
 
 .animated-background
   animation-duration: 1s;

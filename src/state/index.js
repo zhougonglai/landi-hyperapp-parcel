@@ -1,3 +1,38 @@
 export const state = {
-  btnClick: false
+  btnClick: false,
+  playing: false,
+  pageOne: true,
+  pageTwo: false,
+  pageThree: false,
+  pageFour: false,
+  pageFour: false,
+  pageFive: false,
+  pageSix: false,
+  pageSeven: false,
+  userInfo:{
+    "cid":"9102069",
+    "sid":"319585",
+    "tname":"henry_landi",
+    "begin_time":"2016-08-31 18:55:00",
+    "to":"sara",
+    "nickename":"Max",
+    "endTogetherUser":"陈大顺",
+    "endTogetherclassNum":"93",
+    "classMinute": 1300,
+    "classTearchar":"Alice M",
+    "Advance":"5",
+    "Review":"3",
+    "tutornickname":"Annie.Yan",
+    "ClassMinute":"102",
+    "TerminalClassMinute":2590,
+    "TerminalKeyWorod":"学神"
+  },
+  defaultUser:{
+    "endTogetherclassNum":"0",
+    "classMinute": 0,
+    "Advance":"0",
+    "Review":"0",
+    "ClassMinute":"0",
+    "TerminalClassMinute":0,
+  }
 }

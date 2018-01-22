@@ -1,6 +1,6 @@
 import {h} from 'hyperapp';
 
-export const PageSeven = ({state, actions}) => 
+export const PageSeven = ({stay, btnClick, onTap}) => 
   <section class="span-1 d-flex page" id="page-seven">
     <div class="span-1 pa-2">
       <div>梦想是缤纷的糖果色</div>
@@ -18,8 +18,8 @@ export const PageSeven = ({state, actions}) =>
     </div>
     <div class="span-1 d-flex flex-center">
       <div class="share">
-        <button type="button" class={state.btnClick? 'btn blue round btn-share btn-click': 'btn blue round btn-share'} 
-        onclick={actions.onTap}>那必须的</button>
+        <button type="button" class={btnClick? 'btn gold round btn-share btn-click': 'btn gold round btn-share'} 
+        onclick={onTap}>那必须的</button>
       </div>
     </div>
   </section>
