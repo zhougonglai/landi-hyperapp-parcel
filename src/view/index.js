@@ -24,14 +24,14 @@ const wxConfig = () => {
 }
 
 const scrollBehavior = (state, action) => {
-  if(window.scrollY < window.innerHeight / 2){
+  if(window.scrollY < window.innerHeight * 1/2){
     action.stayToggler({index:'pageOne', status:true});
     action.stayToggler({index:'pageTwo', status:false});
-  } else if(window.scrollY > window.innerHeight / 2 && window.scrollY < window.innerHeight * 3/2) {
+  } else if(window.scrollY > window.innerHeight * 1/2 && window.scrollY < window.innerHeight * 2) {
     action.stayToggler({index:'pageOne', status:false});
     action.stayToggler({index:'pageTwo', status:true});
     action.stayToggler({index:'pageThree', status:false});
-  } else if(window.scrollY > window.innerHeight * 3/2 && window.scrollY < window.innerHeight * 5/2) {
+  } else if(window.scrollY > window.innerHeight * 2 && window.scrollY < window.innerHeight * 5/2) {
     action.stayToggler({index:'pageTwo', status:false});
     action.stayToggler({index:'pageThree', status: true});
     action.stayToggler({index:'pageFour', status: false});

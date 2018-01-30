@@ -11,7 +11,7 @@ export const PageTwo = ({stay}) =>
         <div>终于等到你----</div>
         <div>
           <div class={`d-inline-block text-gold text-center ${stay ?" text-focus-in ": "blur-out-contract-bck"}`}>
-          Jay
+            Jay
           </div>
         , 可爱的小伙伴</div>
       </div>
