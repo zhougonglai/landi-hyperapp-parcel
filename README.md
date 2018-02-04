@@ -30,7 +30,7 @@ zero config server package
 
 > postcss
 
-![post 配置方案](https://www.w3cplus.com/mobile/vw-layout-in-vue.html)
+[post 配置方案](https://www.w3cplus.com/mobile/vw-layout-in-vue.html)
 
 - postcss-import 文件引用
 - postcss-url 引用文件处理
