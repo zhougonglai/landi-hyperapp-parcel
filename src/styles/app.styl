@@ -1,73 +1,171 @@
-@import 'Variable';
-@import './Display';
-@import './Component';
-@import './Space';
-@import './Color';
 
-/* roboto-300 - latin */
-@font-face 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'),
-       url('../static/fonts/roboto-v16-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../static/fonts/roboto-v16-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+@require './stylus/var/Variable'
+@require './stylus/var/Display'
+@require './stylus/var/Space'
+@require './stylus/var/Color'
 
-/* roboto-300italic - latin */
-@font-face 
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 300;
-  src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
-       url('../static/fonts/roboto-v16-latin-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../static/fonts/roboto-v16-latin-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+@require './stylus/theme/default'
+
+@require './stylus/Font'
+@require './stylus/Reset'
+@require './Component'
+
 
 /**  样式命名风格
   *  .block{}           组件样式
   *  .block__element{}  组件节点样式
   *  .block--modifier{} 组件节点状态
   */
-/* --- normalize --- */ 
+[aspectratio]
+  position: relative
+  &:before
+    content:''
+    display: block
+    width: 1px
+    margin-left: 1px
+    height: 0
+  [aspectratio-content]
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
 body
-  font-family 'Roboto'
-  margin 0
-  display flex
-  background-color abc-primary
-  color theme-color
-  // section
-  //   border-bottom: 1px solid theme-color
-  #app
-    height: 700vh
-    position: relative
+  height 100vh
+  width: 100vw
+  overflow: hidden
+  display: flex
+  .default-page
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-content: stretch
+    justify-content: stretch
+    align-items: stretch
+    justify-items: stretch
+    .default-content
+      flex:1
+#app
+  height 700vh
+  width: 750px
   .page
-    max-height: 100vh
-    width: 100vw
-    box-sizing: border-box
-    @extend .flex-fill
-    &#page-one
-      .material-icons
-        font-size: 48px
-    &#page-two,
-    &#page-three,
-    &#page-four,
-    &#page-five,
-    &#page-six,
-    &#page-seven
-      .flex-left-center,
-      .flex-right-center,
-      .flex-center,
-      .flex-fill
-        padding: 1.25em
-        div
-          line-height: 20pt
-          font-size: 14pt
-      .letter
-        width: 68%
-    .share
-      width: 100%
-      @extend .flex-center
-      .btn-share
-        width: 47vw
+    width: 750px
+  #page-one
+    background-image: url('../static/images/bg-1.jpg'), url('../static/images/bg.jpg')
+    background-position-y: -2rem
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+  #page-two
+    background-image: url('../static/images/bg-2.jpg') ,url('../static/images/bg.jpg')
+    background-position: right bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+  #page-three
+    background-image: url('../static/images/bg-3.jpg'), url('../static/images/bg.jpg')
+    background-position: left bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    #copy-three
+      margin-top: 1rem
+      text-align: right
+      margin-right: 1em
+  #page-four
+    background-image: url('../static/images/bg-4.jpg'), url('../static/images/bg.jpg')
+    background-position: bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    #copy-four
+      margin-top: 1rem
+      margin-left: 1em
+    #teacher-avatar
+      position: absolute
+      width: 1.5rem
+      height: 1.5rem
+      border-radius: 1.5rem
+      bottom: 7.75rem
+      left: 4.7rem
+  #page-five
+    background-image: url('../static/images/bg-5.jpg'), url('../static/images/bg.jpg')
+    background-position: bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    #copy-five
+      margin-top: 1rem
+      text-align: right
+      margin-right: 1em
+    #together
+      position: absolute
+      width: 1.3rem
+      height: 1.3rem
+      border-radius: 50%
+      left: 3.1rem
+      bottom: 5.1rem
+      border: 4px solid #ffc64e
+      background-color: #11b8c7
+  #page-six
+    background-image: url('../static/images/bg-6.jpg'), url('../static/images/bg.jpg')
+    background-position: bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    #copy-six
+      margin-left: 1em
+  #page-seven
+    background-image: url('../static/images/bg-7-b.jpg'), url('../static/images/bg.jpg')
+    background-position: bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    #copy-seven
+      margin-top: 45px
+    #student-avatar
+      position: absolute
+      width: 1.5rem
+      height: 1.5rem
+      border-radius: 50%
+      bottom: 5.8rem
+      left: 4.3rem
+      border: 4px solid #ffc64e
+      background-color: abc-primary
+    .statdy-header
+      position: absolute
+      bottom: 7.2rem
+      &.header-a
+        width: 59px
+        height: 53px
+        left: 4.35rem
+      &.header-b
+        width: 68.5px
+        height: 60px
+        left: 4.22rem
+      &.header-c
+        width: 92.5px
+        height: 61px
+        left: 3.8rem
+    .statdy-medal
+      position: absolute
+      bottom: 4.7rem
+      left: 4.7rem
+      &.medal-copper
+        width: 26px
+        height: 27.5px
+      &.medal-sliver
+        width: 26px
+        height: 26px
+      &.medal-gold
+        width: 26px
+        height: 26px
+  #page-eight
+    background-image: url('../static/images/bg-8.jpg'), url('../static/images/bg.jpg')
+    background-position: bottom
+    background-repeat: no-repeat, repeat
+    background-size: contain, 0.5rem
+    position: static
+    justify-content: space-between
+    display: flex
+    flex-direction: column
+    #copy-eight
+      margin-top: 2rem
 
 /* --- animate --- */
 [class*=elevation-]
@@ -99,50 +197,11 @@ body
   background-size: 4px 1px;
   background-repeat: repeat-x;
 
-/* --------------- style components --------------- */
-
-/* --- list > item (简版) --- */
-ul.list
-  list-style: none
-  padding: 0
-  margin: 0
-  display: flex
-  flex-direction: column
-  &.dense
-    li.item
-      padding: 0 space-util(0)
-  li.item
-    flex: 1
-    padding: space-util(0) space-util(1)
-    min-height: 40px
-    display: flex
-    flex-direction: row
-    align-items: center;
-    font-family: 'Roboto', 'Noto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    white-space: nowrap;
-    cursor pointer
-
-    i.item-icon,
-    button.material-icons
-      // &:first-of-type
-      width: 45px
-    .item-content
-      &~i.item-icon
-        text-align: end
-
-    .item-content
-      flex 1
-      padding-left: 8px
-
 /* --- 引用块 --- */
 .blockquote
   display: block
   border-left 3px solid abc-blue
-  border-radius: 3px;
+  border-radius: 3px
   background: linear-gradient(to right, abc-blue ,rgba(abc-blue,0.6))
   padding: space-util(0) space-util(1)
   box-sizing: border-box

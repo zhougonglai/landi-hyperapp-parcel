@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "styl": "stylus -w src/styles/app.styl -o src/app.css",
-    "build": "parcel index.html NODE_ENV=production "
+    "build": "parcel build index.html --public-url / && NODE_ENV=production"
   },
   "dependencies": {
     "@hyperapp/logger": "^0.4.1",
@@ -33,24 +33,5 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
-  },
-  "postcss": {
-    "modules": false,
-    "plugins": {
-      "autoprefixer": {
-        "browsers": [
-          ">1%",
-          "last 4 versions",
-          "Firefox ESR",
-          "not ie < 9"
-        ],
-        "flexbox": "no-2009"
-      }
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }

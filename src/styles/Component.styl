@@ -15,9 +15,6 @@
     bottom: 0
     width: 100%
     height: 100%
-
-
-
 /* --- elevation --- */
 
 .elevation-1
@@ -150,7 +147,7 @@ button
     transition-timing-function cubic-bezier(0.645, 0.045, 0.355, 1)
     animation-duration 0.4s
     animation-name: ripple-out
-  
+
 
 .cursor-pointer
   cursor pointer
@@ -179,3 +176,77 @@ button
   height: 1px
   width: 100%
   background-color: border-color-primary
+
+.abc-navbar
+  display flex
+  align-items: center
+  height: 45px
+  background-color: #fff
+
+
+// .description
+//   .describe
+//     padding-left: space-util(1)
+
+ul.list
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: column
+  color $text-color
+  background-color $bg-light
+  &.dark
+    background-color: $bg-dark-color
+  &.dense
+    li.item
+      padding: 0 space-util(0)
+      font-weight: 400;
+  li.item
+    flex: 1
+    padding-left: space-util(1)
+    min-height: 72px
+    display: flex
+    flex-direction: row
+    align-items: center;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 36px;
+    line-height: 72px;
+    white-space: nowrap;
+    cursor pointer
+    position relative
+
+    .item-inner
+      margin: 0
+      padding: 0
+      display: flex
+      overflow hidden
+      flex 1
+      align-self stretch
+      border 0
+      padding-right: space-util(1)
+      border-bottom: 0.55px solid border-color-normal
+      .item-wapper
+        display: flex
+        overflow hidden
+        flex: 1
+        align-self: stretch
+        text-overflow: ellipsis
+        .label
+          overflow hidden
+          flex: 1
+          text-overflow: ellipsis
+          white-space: nowrap
+
+    i.item-icon,
+    button.material-icons
+      // &:first-of-type
+      width: 45px
+    .item-content
+      &~i.item-icon
+        text-align: end
+
+    .item-content
+      flex 1
+      padding-left: 8px

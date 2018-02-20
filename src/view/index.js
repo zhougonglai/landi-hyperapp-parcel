@@ -1,6 +1,8 @@
 import {h} from 'hyperapp';
 import {Route, Switch} from '@hyperapp/router';
 
+import {DefaultPage} from './components/page';
+import {ColorComponents} from './color-page';
 import {PageOne} from './page-one';
 import {PageTwo} from './page-two';
 import {PageThree} from './page-three';
@@ -13,6 +15,11 @@ import {ResultPage} from './page-result';
 export const view = (state, actions) =>
 <Switch>
   <Route path="/" render={_=>
+    <DefaultPage>
+      <ColorComponents className="default-content"/>
+    </DefaultPage>
+  } />
+  <Route path="/home" render={_=>
     <div class="d-flex span-1" id="app">
       <PageOne   state={state} actions={actions} />
       <PageTwo   state={state} actions={actions} />
